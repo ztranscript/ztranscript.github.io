@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring 概述 - ztranscript</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="Spring概述1 Spring 概述①Spring ...">
+  <meta name="author" content="ztranscript">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_s6x2xcokxrl.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '/images/theme/loading.gif'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '[object Object]',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+  <nav class="navbar" style="">
+    <div class="left">
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+    </div>
+    <div class="center">Spring 概述</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+
+<nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Spring 概述</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>三月 25, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2845</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="Spring概述"><a href="#Spring概述" class="headerlink" title="Spring概述"></a>Spring概述</h1><h2 id="1-Spring-概述"><a href="#1-Spring-概述" class="headerlink" title="1 Spring 概述"></a>1 Spring 概述</h2><p>①Spring 是一个开源框架</p>
+<p>②Spring 为简化企业级开发而生，使用 Spring，JavaBean 就可以实现很多以前要靠 EJB<br>才能实现的功能。同样的功能，在 EJB 中要通过繁琐的配置和复杂的代码才能够实现，而在<br>Spring 中却非常的优雅和简洁。</p>
+<p>③Spring 是一个 ***IOC(DI)***和 <em><strong>AOP</strong></em> 容器框架。(<em><strong>控制反转</strong></em> &amp;&amp; <em><strong>面向切面编程</strong></em>)</p>
+<p>④Spring 的优良特性</p>
+<blockquote>
+<p>[1] 非侵入式：基于 Spring 开发的应用中的对象可以不依赖于 Spring 的 API<br>[2] 依赖注入：DI——Dependency Injection，反转控制(IOC)最经典的实现。<br>[3] 面向切面编程：Aspect Oriented Programming——AOP<br>[4] 容器：Spring 是一个容器，因为它包含并且管理应用对象的生命周期<br>[5] 组件化：Spring 实现了使用简单的组件配置组合成一个复杂的应用。在 Spring 中可以使用 XML 和 Java 注解组合这些对象。<br>[6] 一站式：在 IOC 和 AOP 的基础上可以整合各种企业应用的开源框架和优秀的第<br>三方类库（实际上 Spring 自身也提供了表述层的 SpringMVC 和持久层的 Spring JDBC）。</p>
+</blockquote>
+<p>⑤Spring 目前的版本<br>缺图，待补</p>
+<p>⑥Spring 模块<br>缺图，待补</p>
+<h2 id="2-搭建-Spring-运行时环境"><a href="#2-搭建-Spring-运行时环境" class="headerlink" title="2 搭建 Spring 运行时环境"></a>2 搭建 Spring 运行时环境</h2><p>搭建Spring运行环境，有两种方式 — 大多数的环境搭建都如此。</p>
+<h3 id="2-1-导入jar包方式"><a href="#2-1-导入jar包方式" class="headerlink" title="2.1 导入jar包方式"></a>2.1 导入jar包方式</h3><p>①加入 JAR 包</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-attr">[1]</span>Spring 自身 JAR 包：spring-framework-<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span>.RELEASE\libs 目录下<br>spring-beans-<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span><span class="hljs-selector-class">.RELEASE</span>.jar<br>spring-context-<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span><span class="hljs-selector-class">.RELEASE</span>.jar<br>spring-core-<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span><span class="hljs-selector-class">.RELEASE</span>.jar<br>spring-expression-<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span><span class="hljs-selector-class">.RELEASE</span>.jar<br><span class="hljs-selector-attr">[2]</span>commons-logging-<span class="hljs-number">1.1</span>.<span class="hljs-number">1</span>.jar<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意的是：你所需要导入的jar包需要根据实际需要来导入。换言之，你应该要了解Spring各个模块所需的jar包都是哪些。 Spring模块图见上文。</p>
+</blockquote>
+<p>②根据需要创建 Spring 配置文件</p>
+<h3 id="2-2-Maven导入依赖"><a href="#2-2-Maven导入依赖" class="headerlink" title="2.2 Maven导入依赖"></a>2.2 Maven导入依赖</h3><p>Maven是一种项目管理工具，具体做的事就是：从’本地仓库’ 或 ‘远程仓库’中导入所需要的依赖坐标。这里所说的’依赖坐标’就是相关jar包的坐标，只需导入坐标的好处是可以降低程序臃肿程度，jar包就只用一份就可。</p>
+<p>代码示例：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 导入spring-core依赖 --&gt;</span><br><span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.2.8.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-Spring-HelloWorld"><a href="#3-Spring-HelloWorld" class="headerlink" title="3 Spring HelloWorld"></a>3 Spring HelloWorld</h2><p>一般的，学习一门编程语言，总是会以编写出HelloWorld代码来简单入门。<br>不失一般性，这里将以Spring HelloWorld方式来简单入门。</p>
+<blockquote>
+<p>①目标：使用 Spring 创建对象，为属性赋值<br>②创建 Student 类</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// Student.java</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">Integer</span> studentId;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> stuName;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-comment">// 省略getter/setter/toString</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>③创建 Spring 配置文件</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- spring配置文件,这里命名为helloworld.xml --&gt;</span><br><span class="hljs-comment">&lt;!-- 名字命名无强制要求，这里为了突出意图，以此命名 --&gt;</span><br><br><span class="hljs-comment">&lt;!-- 使用bean元素定义一个由IOC容器创建的对象 --&gt;</span><br><span class="hljs-comment">&lt;!-- class属性指定用于创建bean的全类名 --&gt;</span><br><span class="hljs-comment">&lt;!-- id属性指定用于引用bean实例的标识 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;student&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.atguigu.helloworld.bean.Student&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 使用property子元素为bean的属性赋值 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;studentId&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1001&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;stuName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Tom2015&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;20&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>④测试：通过 Spring 的 IOC 容器创建 Student 类实例</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// junit测试类 - 测试方法</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">test</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">//1.创建IOC容器对象</span><br>    ApplicationContext iocContainer = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;helloworld.xml&quot;</span>);<br>    <span class="hljs-comment">//2.根据id值获取bean实例对象</span><br>    Student student = (Student) iocContainer.getBean(<span class="hljs-string">&quot;student&quot;</span>);<br>    <span class="hljs-comment">//3.打印bean</span><br>    System.out.println(student);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⑤验证：Spring 在创建 IOC 容器对象时，就已经完成了 bean 的创建和属性的赋值。</p>
+</blockquote>
+<h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4 小结"></a>4 小结</h2><p>Spring框架相当于是一个容器，所有的类一旦被Spring容器管理起来，就不用我们去操心这些类的其一系列事情。<br>我们需要做的就是放心的将这些类交由Spring容器管理，然后舒舒服服的享受Spring带给我们的便利。</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>ztranscript</li>
+    <li><strong>本文链接：</strong><a href="http://ztranscript.github.io/2021/03/25/Spring%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E6%A6%82%E8%BF%B0/index.html" title="http:&#x2F;&#x2F;ztranscript.github.io&#x2F;2021&#x2F;03&#x2F;25&#x2F;Spring%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E6%A6%82%E8%BF%B0&#x2F;index.html">http:&#x2F;&#x2F;ztranscript.github.io&#x2F;2021&#x2F;03&#x2F;25&#x2F;Spring%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E6%A6%82%E8%BF%B0&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2021/03/25/Spring%20Boot/"><i class="iconfont iconleft"></i>JUC</a>
+    <a href="/2021/03/25/Synchronized/">Synchronized<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring%E6%A6%82%E8%BF%B0"><span class="toc-text">Spring概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Spring-%E6%A6%82%E8%BF%B0"><span class="toc-text">1 Spring 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%90%AD%E5%BB%BA-Spring-%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83"><span class="toc-text">2 搭建 Spring 运行时环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%AF%BC%E5%85%A5jar%E5%8C%85%E6%96%B9%E5%BC%8F"><span class="toc-text">2.1 导入jar包方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Maven%E5%AF%BC%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-text">2.2 Maven导入依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Spring-HelloWorld"><span class="toc-text">3 Spring HelloWorld</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B0%8F%E7%BB%93"><span class="toc-text">4 小结</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/izhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
