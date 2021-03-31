@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Java 注解 - ztranscript</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="Java 注解
+🔲 第 6 小点，代码注释完善
+
+前...">
+  <meta name="author" content="ztranscript">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_s6x2xcokxrl.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/monokai-sublime.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/tomorrow-night-eighties.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '/images/theme/loading.gif'
+      },
+      donate: {
+        enable: true,
+        alipay: '',
+        wechat: ''
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '[object Object]',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'normal'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+  <nav class="navbar" style="">
+    <div class="left">
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+    </div>
+    <div class="center">Java 注解</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+
+<nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Java 注解</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>三月 31, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6602</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="Java-注解"><a href="#Java-注解" class="headerlink" title="Java 注解"></a>Java 注解</h1><ul>
+<li>🔲 第 6 小点，代码注释完善</li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hello，大家好，我来了。</p>
+<p>这篇文章打算来聊聊 Java 注解（Annotation）。</p>
+<h2 id="1、啥是注解？"><a href="#1、啥是注解？" class="headerlink" title="1、啥是注解？"></a>1、啥是注解？</h2><p>今天问了同学，先来看看他的回答。</p>
+<p><img    class="lazyload" data-original="https://gitee.com/Kyrie98/blog-img/raw/master/img/1616985179771-35b5db76-1939-42f7-8b98-bb6af0c859ec.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<p>emmm？对元数据的支持，对类的一种扩展。</p>
+<p>好像没啥毛病。不过能不能简单点描述哦？</p>
+<p>注解其实就是<strong>代码中的特殊标记</strong>，这些标记可以<strong>在编译、类加载、运行时被读取，并执行相对应的处理</strong>。</p>
+<h2 id="2、为什么需要用到注解？"><a href="#2、为什么需要用到注解？" class="headerlink" title="2、为什么需要用到注解？"></a>2、为什么需要用到注解？</h2><p>有过servlet编程 或者是 Spring xml模式编程的都知道，我们需要在xml文件配置好多东西。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;bean <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;adto&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-string">&quot;com.example.dto.ADTO&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+<p>在Spring配置中，常见的是，你需要用到一个bean，你就需要来这儿配置一个<bean>标签。</p>
+<p>可想而知，当业务量庞大起来，这一个工作就有不小的工作量。</p>
+<p>而且，还需要配置各种bean之间的依赖关系，啊这，搞死我了！！！</p>
+<p>为了简化开发，我们推荐使用注解来开发。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;<br>    <span class="hljs-meta">@AutoWired</span><br>    <span class="hljs-keyword">private</span> B b;<br>&#125;<br><br><span class="hljs-meta">@Component</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>&#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>比如Spring中，通过上面的两个注解就可以实现相同的xml配置。代码量减少了，同时也减少了后期维护的压力。</p>
+<h2 id="3、Java-基本Annotation"><a href="#3、Java-基本Annotation" class="headerlink" title="3、Java 基本Annotation"></a>3、Java 基本Annotation</h2><p>这里先不介绍这几个Annotation，先列举出来。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@Override</span>               检查子类重写的方法是否符合规范<br><span class="hljs-variable">@Deprecated</span>             该方法已过期<br><span class="hljs-variable">@SuppressWarnings</span>       镇压警告<br><span class="hljs-variable">@SafeVarargs</span>            ...<br><span class="hljs-variable">@FunctionalInterface</span>    函数式接口<br><br><span class="hljs-variable">@FunctionalInterface</span><br>public interface MyInterface &#123;<br>    <span class="hljs-comment">// 只有一个接口方法</span><br>    <span class="hljs-selector-tag">void</span> <span class="hljs-selector-tag">sayHello</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="4、自定义注解基础"><a href="#4、自定义注解基础" class="headerlink" title="4、自定义注解基础"></a>4、自定义注解基础</h2><h3 id="4-1、前置知识"><a href="#4-1、前置知识" class="headerlink" title="4.1、前置知识"></a>4.1、前置知识</h3><p>标记Annotation：<strong>没有任何成员变量的注解称作为标记注解，@Overried就是一个标记注解</strong></p>
+<p>元注解Annotation：<strong>我们自定义的注解是可以带成员变量的，定义带成员变量的注解叫做元数据Annotation</strong></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">public</span> @interface MyAnnotation &#123;<br>    <span class="hljs-comment">// 定义两个成员变量，跟接口中定义方法一样。</span><br>    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">username</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">age</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注解上成员变量类型：</p>
+<p><strong>String、数组、Class、枚举类、注解、基本数据类型</strong></p>
+<h3 id="4-2、使用自定义注解"><a href="#4-2、使用自定义注解" class="headerlink" title="4.2、使用自定义注解"></a>4.2、使用自定义注解</h3><p>创建一个待默认值的注解</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> @<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyAnnotation</span> </span>&#123;<br>    <span class="hljs-keyword">String</span> username() <span class="hljs-keyword">default</span> <span class="hljs-string">&quot;ztranscript&quot;</span>;<br><br>    int age() <span class="hljs-keyword">default</span> <span class="hljs-number">22</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们来用用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserService</span> </span>&#123;<br>    <span class="hljs-meta">@MyAnnotation</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(String username, <span class="hljs-keyword">int</span> age)</span> </span>&#123;<br>        <span class="hljs-comment">// to do</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果一个注解有了默认值，我们就可以不需要指定注解属性值。</p>
+<p>有一种特殊的情况，如果<strong>注解上只有一个属性，并且属性的名称为value</strong>，那么在使用的时候，我们<strong>可以不写value，直接赋值给它就行</strong></p>
+<p>**<br>**</p>
+<h3 id="4-3、初识注解注入"><a href="#4-3、初识注解注入" class="headerlink" title="4.3、初识注解注入"></a>4.3、初识注解注入</h3><p>我们现在只是把注解加在了方法上，但实质上他们并没有产生联系。</p>
+<p>那为什么Spring 之类的注解就能实现注入功能？原因就是框架底层已经实现了这种关系。</p>
+<p><strong>我们自定义的注解，需要我们自己处理。</strong></p>
+<p>利用反射，我们可以很轻松将注解信息注入到方法中。步骤一般是</p>
+<ol>
+<li>利用反射，<em>获得具体方法</em></li>
+<li><em>获取方法上的注解</em></li>
+<li><em>注解信息注入*</em>,*<em>执行方法</em></li>
+</ol>
+<p>*<br>*</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs oxygene"><span class="hljs-comment">// 获得具体方法</span><br><span class="hljs-keyword">Class</span>&lt;UserService&gt; userServiceClass = UserService.class;<br><span class="hljs-function"><span class="hljs-keyword">Method</span> <span class="hljs-title">add</span> = <span class="hljs-title">userServiceClass</span>.<span class="hljs-title">getMethod</span><span class="hljs-params">(&quot;<span class="hljs-keyword">add</span>&quot;, String.<span class="hljs-keyword">class</span>, int.<span class="hljs-keyword">class</span>)</span>;</span><br><br><span class="hljs-comment">// 获取方法上的注解</span><br>MyAnnotation annotation = <span class="hljs-keyword">add</span>.getAnnotation(MyAnnotation.class);<br>String username = annotation.username();<br>int age = annotation.age();<br><br><span class="hljs-comment">// 注解信息注入,执行方法</span><br>UserService userService = userServiceClass.newInstance();<br><span class="hljs-keyword">add</span>.invoke(userService, username, age);<br></code></pre></td></tr></table></figure>
+
+
+
+<p>执行一下！</p>
+<p><img    class="lazyload" data-original="https://gitee.com/Kyrie98/blog-img/raw/master/img/1617156169287-c928dce0-74bf-4da3-a2fa-30d31f7b3dd2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<p>咋回事？一脸懵逼，这就尴尬了。</p>
+<h2 id="5、JDK-元注解"><a href="#5、JDK-元注解" class="headerlink" title="5、JDK 元注解"></a>5、JDK 元注解</h2><p>在JDK中除了java.lang包下有Annotation，<strong>在java.lang.annotation下也有几个常用的元Annotation。</strong></p>
+<p>这类注解都是用于<strong>修饰其他Annotation定义。</strong></p>
+<p>**<br>**</p>
+<h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>用于指定被修饰的Annotation被保留多长时间。</p>
+<p>Java 文件三个时期：编译、class、运行。</p>
+<p>这个注解默认是class，而反射是在运行期执行的，故而获取不到数据。</p>
+<p>我们加上这个注解，就正常了。</p>
+<p><img    class="lazyload" data-original="https://gitee.com/Kyrie98/blog-img/raw/master/img/1617156169287-c928dce0-74bf-4da3-a2fa-30d31f7b3dd2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<h3 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h3><p>标注了该注解可以加在哪些地方。具体可以有：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">public enum ElementType &#123;<br>    <span class="hljs-comment">/** Class, interface (including annotation type), or enum declaration */</span><br><span class="hljs-built_in">    TYPE,</span><br><br>    <span class="hljs-comment">/** Field declaration (includes enum constants) */</span><br><span class="hljs-built_in">    FIELD,</span><br><br>    <span class="hljs-comment">/** Method declaration */</span><br><span class="hljs-built_in">    METHOD,</span><br><br>    <span class="hljs-comment">/** Formal parameter declaration */</span><br><span class="hljs-built_in">    PARAMETER,</span><br><br>    <span class="hljs-comment">/** Constructor declaration */</span><br><span class="hljs-built_in">    CONSTRUCTOR,</span><br><br>    <span class="hljs-comment">/** Local variable declaration */</span><br><span class="hljs-built_in">    LOCAL_VARIABLE,</span><br><br>    <span class="hljs-comment">/** Annotation type declaration */</span><br><span class="hljs-built_in">    ANNOTATION_TYPE,</span><br><br>    <span class="hljs-comment">/** Package declaration */</span><br><span class="hljs-built_in">    PACKAGE,</span><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Type parameter declaration</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * @since 1.8</span><br><span class="hljs-comment">     */</span><br><span class="hljs-built_in">    TYPE_PARAMETER,</span><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Use of a type</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * @since 1.8</span><br><span class="hljs-comment">     */</span><br>    TYPE_USE<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Document"><a href="#Document" class="headerlink" title="@Document"></a>@Document</h3><p>用于指定被该Annotation修饰的Annotation类将被javadoc工具提取成文档。</p>
+<h3 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h3><p>@Inherited也是用来修饰其他的Annotation的，被修饰过的Annotation将具有继承性。</p>
+<p>A类上未加@MyAnnotation注解，而A基础B，B类上加了@MyAnnotation注解。</p>
+<p>如果这个注解上加了@Inherited注解，那么A类也将包含@MyAnnotation注解。</p>
+<h2 id="6、注解注入"><a href="#6、注解注入" class="headerlink" title="6、注解注入"></a>6、注解注入</h2><p>这一节对反射知识要有一定认识。可以先去学习一波反射。</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247486658&idx=1&sn=58e682f3b9c68def4f12c574afac0de3&chksm=ebd74dc3dca0c4d542aa7ef2f7944dba438a447ffc2b39650dc4362698c6a7acd32e1a5fe3dc&token=2140209384&lang=zh_CN#rd">Java3y - 反射基础</a></p>
+<p>好了，我们来看看需求，之前我们是在方法上通过注解，注入了注解相关属性值。</p>
+<p>现在换个需求，我们需要注入的是对象。</p>
+<p>我们知道的是，<strong>注解能够声明的属性没有对象类型。</strong></p>
+<p>所以我们还是一样，在注解中定义对象的相关属性，让反射来帮我们先注入对象，再利用反射把对象注入到方法参数中去。</p>
+<p><strong>Person.java</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">String</span> username;<br>    <span class="hljs-keyword">private</span> int age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">getUsername</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> username;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">setUsername</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> username</span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.username = username;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> int <span class="hljs-function"><span class="hljs-title">getAge</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">setAge</span>(<span class="hljs-params">int age</span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">toString</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Person&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;username=&#x27;&quot;</span> + username + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, age=&quot;</span> + age +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>PersonDao.java</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonDao</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Person person;<br><br>    <span class="hljs-keyword">public</span> Person <span class="hljs-function"><span class="hljs-title">getPerson</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> person;<br>    &#125;<br><br>    <span class="hljs-meta">@InjectBean</span>(username = <span class="hljs-string">&quot;对象注入username&quot;</span>, age = <span class="hljs-number">20</span>)<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">setPerson</span>(<span class="hljs-params">Person person</span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.person = person;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">toString</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;PersonDao&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;person=&quot;</span> + person +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>AnnotationTool.java</strong></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">public <span class="hljs-keyword">class</span> AnnotationTool &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 通过属性名注入bean</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * @param name</span><br><span class="hljs-comment">     */</span><br>    public static Object inject<span class="hljs-constructor">Bean(String <span class="hljs-params">name</span>)</span> throws IntrospectionException,<br>            IllegalAccessException, InstantiationException, InvocationTargetException &#123;<br>        PropertyDescriptor descriptor = <span class="hljs-keyword">new</span> <span class="hljs-constructor">PropertyDescriptor(<span class="hljs-params">name</span>, PersonDao.<span class="hljs-params">class</span>)</span>;<br><br>        Person person = (Person) descriptor.get<span class="hljs-constructor">PropertyType()</span>.<span class="hljs-keyword">new</span><span class="hljs-constructor">Instance()</span>;<br><br>        Method writeMethod = descriptor.get<span class="hljs-constructor">WriteMethod()</span>;<br><br>        Annotation injectBean = writeMethod.get<span class="hljs-constructor">Annotation(InjectBean.<span class="hljs-params">class</span>)</span>;<br><br>        Method<span class="hljs-literal">[]</span> methods = injectBean.get<span class="hljs-constructor">Class()</span>.get<span class="hljs-constructor">Methods()</span>;<br><br>        <span class="hljs-keyword">for</span> (Method m : methods) &#123;<br>            String mName = m.get<span class="hljs-constructor">Name()</span>;<br>            <span class="hljs-keyword">try</span> &#123;<br>                PropertyDescriptor propertyDescriptor = <span class="hljs-keyword">new</span> <span class="hljs-constructor">PropertyDescriptor(<span class="hljs-params">mName</span>, Person.<span class="hljs-params">class</span>)</span>;<br><br>                Method writeMethod1 = propertyDescriptor.get<span class="hljs-constructor">WriteMethod()</span>;<br><br>                Object value = m.invoke(injectBean, null);<br><br>                writeMethod1.invoke(person, value);<br><br>            &#125; catch (Exception e) &#123;<br>                continue;<br>            &#125;<br>        &#125;<br>        PersonDao personDao = <span class="hljs-keyword">new</span> <span class="hljs-constructor">PersonDao()</span>;<br>        writeMethod.invoke(personDao, person);<br><br>        return personDao;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>Main.java</strong></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> &#123;</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            PersonDao personDao = (PersonDao) AnnotationTool.<span class="hljs-built_in">injectBean</span>(<span class="hljs-string">&quot;person&quot;</span>);<br><br>            System.out.<span class="hljs-built_in">println</span>(personDao);<br>        &#125; <span class="hljs-built_in"><span class="hljs-keyword">catch</span></span> (Exception e) &#123;<br>            e.<span class="hljs-built_in">printStackTrace</span>();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过注解注入对象的操作一般如下：</p>
+<ol>
+<li>得到注解的属性</li>
+<li>得到参数类型，newInstance一个对象</li>
+<li>将1中数据注入到2中对象去</li>
+<li>将3得到的对象注入到方法参数中去</li>
+</ol>
+<h2 id="巨人的肩膀"><a href="#巨人的肩膀" class="headerlink" title="巨人的肩膀"></a>巨人的肩膀</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247484113&idx=1&sn=f5fd35b2f7dc45a256fee170cad0cdc9&chksm=ebd743d0dca0cac6a8fed8caf09f0d561b0358dece9b8e746e1e6726bca093287cf515638349&scene=21###wechat_redirect">Java3y - 注解就是这么简单</a></p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>ztranscript</li>
+    <li><strong>本文链接：</strong><a href="https://ztranscript.github.io/2021/03/31/Java%20%E6%B3%A8%E8%A7%A3/index.html" title="https:&#x2F;&#x2F;ztranscript.github.io&#x2F;2021&#x2F;03&#x2F;31&#x2F;Java%20%E6%B3%A8%E8%A7%A3&#x2F;index.html">https:&#x2F;&#x2F;ztranscript.github.io&#x2F;2021&#x2F;03&#x2F;31&#x2F;Java%20%E6%B3%A8%E8%A7%A3&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img src="">
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/03/27/%E8%AF%B4%E8%AF%B4TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/">说说TCP可靠传输<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-%E6%B3%A8%E8%A7%A3"><span class="toc-text">Java 注解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%95%A5%E6%98%AF%E6%B3%A8%E8%A7%A3%EF%BC%9F"><span class="toc-text">1、啥是注解？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E6%B3%A8%E8%A7%A3%EF%BC%9F"><span class="toc-text">2、为什么需要用到注解？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81Java-%E5%9F%BA%E6%9C%ACAnnotation"><span class="toc-text">3、Java 基本Annotation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E5%9F%BA%E7%A1%80"><span class="toc-text">4、自定义注解基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E3%80%81%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">4.1、前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E3%80%81%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="toc-text">4.2、使用自定义注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3%E3%80%81%E5%88%9D%E8%AF%86%E6%B3%A8%E8%A7%A3%E6%B3%A8%E5%85%A5"><span class="toc-text">4.3、初识注解注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81JDK-%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="toc-text">5、JDK 元注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Retention"><span class="toc-text">@Retention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Target"><span class="toc-text">@Target</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Document"><span class="toc-text">@Document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inherited"><span class="toc-text">@Inherited</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E6%B3%A8%E8%A7%A3%E6%B3%A8%E5%85%A5"><span class="toc-text">6、注解注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80"><span class="toc-text">巨人的肩膀</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/ztranscript "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
